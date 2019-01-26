@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: oauth-server
+  datasource:
+    url: jdbc:postgresql://localhost:5432/office2
+    username: postgres
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+#      temp:
+#        use_jdbc_metadata_defaults: false
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    open-in-view: true
+
+#    database-platform : org.hibernate.dialect.PostgreSQL9Dialect
+#        use_jdbc_metadata_defaults: false
+#    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#    properties:
+#      hibernate:
+#        temp:
+#        use_jdbc_metadata_defaults: false
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ['*']
